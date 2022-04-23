@@ -371,8 +371,9 @@ void Application::Run()
     std::cerr.rdbuf(streambuf_cerr);
     log_file.close();
 
-    mvaddstr(LINES-1, 0, "Press any key to exit.");
-    getch();
+    // Haotian: remove that when we want to run timeloop for a long time.
+    //mvaddstr(LINES-1, 0, "Press any key to exit.");
+    //getch();
     endwin();
   }
 
