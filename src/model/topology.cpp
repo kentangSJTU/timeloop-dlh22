@@ -510,12 +510,12 @@ out << std::endl
   {
     out << "GFLOPs (@1GHz): " << float(total_ops)  / topology.stats_.cycles << std::endl;
     out << "Utilization: " << topology.stats_.utilization << std::endl;
-    out << "Cycles: " << topology.stats_.cycles << std::endl;
-    out << "Energy: " << topology.stats_.energy / 1000000 << " uJ" << std::endl;
-    out << "EDP(J*cycle): " << std::scientific << float(topology.stats_.cycles) * topology.stats_.energy / 1e12 << std::fixed << std::endl;
+    out << "Max topology cycles: " << topology.stats_.cycles << std::endl;
+    out << "Total topology energy: " << float(topology.stats_.energy) << " pJ" << std::endl;
+    out << "EDP(J*cycle): " << float(topology.stats_.cycles) * topology.stats_.energy / 1e12 << std::endl;
 
   }
-  out << "Area: " << topology.stats_.area / 1000000 << " mm^2" << std::endl;
+  out << "Total topology area: " << topology.stats_.area << " um^2" << std::endl;
 
 
   if (topology.is_evaluated_)
